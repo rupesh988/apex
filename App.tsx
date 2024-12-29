@@ -8,17 +8,21 @@ export default function App() {
   NavigationBar.setBackgroundColorAsync("#FFFFFF");
   const [input,setInput] = useState("");
   const [generate,setGenerate] = useState(false);
-  const [html,setHtml] = useState("<h1><center>APEX generater </center></h1>")
+  const [html,setHtml] = useState("<center><h1>APEX</h1> </center>")
+  const API_ENDPOINT = process.env.EXPO_PUBLIC_API_ENDPOINT
+  const ACCESS_KEY = process.env.EXPO_PUBLIC_ACCESS_KEY
   async function webGenerate(){
     console.log(input)
+    console.log(API_ENDPOINT)
     setGenerate(true)
-    const res = await fetch(`http://192.168.0.2:5001/generate`,{
+    const res = await fetch(API_ENDPOINT,{
     method:"POST",
     headers:{
       'Content-Type' : 'application/json'
     },
     body : JSON.stringify({
-      prompt:input
+      prompt:input,
+      access : ACCESS_KEY
     })
     });
     if (res){
@@ -40,6 +44,8 @@ export default function App() {
           style={styles.web}
           originWhitelist={['*']}
           source={{html:html}}
+          userAgent=''
+          
         
         />
 
@@ -52,7 +58,7 @@ export default function App() {
           <TextInput value={input} onChangeText={setInput} style={styles.inputText} placeholder='Generate a webpage' multiline={true} />
         </View>
 
-        <TouchableOpacity style={styles.generate} onPress={()=>webGenerate()} disabled={generate} >
+        <TouchableOpacity style={ !generate ? styles.generate : styles.generating} onPress={()=>webGenerate()} disabled={generate} >
           {generate ? <Text style={styles.generateText} >Generating </Text> : <Text style={styles.generateText} >Generate</Text>}
         </TouchableOpacity>
 

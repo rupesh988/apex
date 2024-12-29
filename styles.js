@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     },
     webwrap : {
         width : 320,
-        height : 400,
+        height : 460,
         margin : 20,
         backgroundColor : '#FFFDF0',
         borderRadius : 6,
@@ -59,6 +59,17 @@ export const styles = StyleSheet.create({
         color : '#FFFFFF',
         fontSize : 20
 
+    },
+    generating :{
+        backgroundColor : '#BCCCDC',
+        height : 50,
+        margin : 10,
+        padding : 10,
+        justifyContent : 'center',
+        alignItems : 'center',
+        borderRadius : 10,
+        elevation : 5,
+        shadowColor : '#AD49E1'
     },
     input :{
         margin : 10,
