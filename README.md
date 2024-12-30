@@ -9,6 +9,7 @@ The **APEX V1** can generate sample web pages based on a prompt, showcasing basi
    ```bash
    cd apex
 3.perform below operations
+   ```bash 
    npm install
    npx expo run:android
    
