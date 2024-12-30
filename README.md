@@ -1,8 +1,14 @@
-APEX version is able to generate a sample webpages with a prompt. 
-it shows the basic design principles for web generationi.
+# APEX V1
 
-clone the git dir and install the npm packages.
-use development build to run app
-# npx expo run:android
+The **APEX V1** can generate sample web pages based on a prompt, showcasing basic design principles for web generation.
 
-to get the api endpoint contact me
+## Steps to Run the Application:
+
+1. Clone the Git repository.  
+2. Install the required npm packages by running:  
+   ```bash
+   cd apex
+3.perform below operations
+   npm install
+   npx expo run:android
+   
