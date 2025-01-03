@@ -19,23 +19,24 @@ export const styles = StyleSheet.create({
         
     },
     bottom :{
-        minHeight : 140,
+        Height : 140,
         backgroundColor : '#FFFFFF',
         alignSelf : 'stretch',
-        elevation :3
+        // elevation :3
         
     },
     middle : {
         flex : 1,
-        backgroundColor : '#F2F9FF',
+        backgroundColor : '#FFFFFF',
         justifyContent : 'center',
-        alignItems : 'center'
+        alignItems : 'center',
+        overflow : "hidden"
     },
     webwrap : {
         width : 320,
         height : 460,
         margin : 20,
-        backgroundColor : '#FFFDF0',
+        backgroundColor : '#FFFFFF',
         borderRadius : 6,
         overflow : 'hidden',
         elevation : 1
@@ -73,12 +74,14 @@ export const styles = StyleSheet.create({
     },
     input :{
         margin : 10,
-        backgroundColor : '#EFF3EA',
+        backgroundColor : '#F5F5F5',
         minHeight : 50,
         paddingHorizontal : 7,
         justifyContent : 'center',
-        borderWidth : 1,
+        borderWidth : 0.2,
         borderRadius : 10,
+        maxHeight : 80,
+        elevation : 3
 
     },
     inputText :{

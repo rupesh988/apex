@@ -8,7 +8,7 @@ export default function App() {
   NavigationBar.setBackgroundColorAsync("#FFFFFF");
   const [input,setInput] = useState("");
   const [generate,setGenerate] = useState(false);
-  const [html,setHtml] = useState("<center><h1>APEX</h1> </center>")
+  const [htmlt,setHtml] = useState("<center><h1>APEX</h1> </center>")
   const API_ENDPOINT = process.env.EXPO_PUBLIC_API_ENDPOINT
   const ACCESS_KEY = process.env.EXPO_PUBLIC_ACCESS_KEY
   async function webGenerate(){
@@ -27,9 +27,12 @@ export default function App() {
     });
     if (res){
       const j = await res.json();
-      setHtml(j.html)
+      setHtml("<html>" + j.html +"</html>")
+      
     }
     setGenerate(false)
+    setInput("")
+    console.log(htmlt)
 
   }
   return (
@@ -40,10 +43,11 @@ export default function App() {
       <View style={styles.middle}>
 
         <View style={styles.webwrap}>
-        <WebView 
+        <WebView
+          allowingReadAccessToURL='*'
           style={styles.web}
           originWhitelist={['*']}
-          source={{html:html}}
+          source={{html:htmlt}}
           userAgent=''
           
         
